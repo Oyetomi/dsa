@@ -38,6 +38,13 @@ class LinkedList<T> {
     this.head = node;
     this.head.next = temp;
   }
+  public listNode() {
+    let temp = this.head;
+    while (temp !== null) {
+      console.log(temp.data);
+      temp = temp.next;
+    }
+  }
 }
 
 const nodeOne = new ListNode(4);
@@ -47,4 +54,4 @@ const linkedList = new LinkedList(nodeOne);
 linkedList.pushNode(8);
 linkedList.insertNode(100);
 console.log(linkedList.printLength());
-console.log(linkedList);
+linkedList.listNode();
