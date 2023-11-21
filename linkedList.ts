@@ -45,6 +45,15 @@ class LinkedList<T> {
       temp = temp.next;
     }
   }
+  public removeNode(data: T) {
+    let temp = this.head;
+    while (temp !== null) {
+      if (temp.next !== null && data === temp.next.data) {
+        temp.next = temp.next.next;
+      }
+      temp = temp.next;
+    }
+  }
 }
 
 const nodeOne = new ListNode(4);
@@ -53,5 +62,7 @@ nodeOne.next = nodeTwo;
 const linkedList = new LinkedList(nodeOne);
 linkedList.pushNode(8);
 linkedList.insertNode(100);
+linkedList.removeNode(8);
+linkedList.removeNode(6);
 console.log(linkedList.printLength());
 linkedList.listNode();
